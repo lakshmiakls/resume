@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    width: 93%;
+    min-height: 100vh;
+    background: rgb(243, 243, 243);
+    margin: 1rem auto 1rem auto;
+    box-shadow: 2px 2px 16px 0px rgba(102, 102, 102, 0.589);
+    
+}
+
+section:not(#profile) {
+    page-break-inside: avoid;
+}
+
+section:nth-last-of-type(1) {
+    margin-bottom: 16px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    background: rgb(240, 237, 237);
+    
+}
+
+.info > *{
+    margin-top: 1rem;
+}
+
+#profile-image{
+    background: cornsilk url("./profile.png") no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.info > h2 {
+    font-weight: 500;
+    word-wrap: break-word;
+    margin-bottom: 1rem;
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts > p {
+    margin:1rem 1rem 0 1rem;
+    color: #585858;
+}
+
+hr{
+    width: 90%;
+    margin: 1rem auto;
+    border-top: 1px solid #eedcdc;
+}
+
+.skills, .languages {
+    margin: 1.5rem 0;
+}
+
+h3 {
+    color: #535353;
+    margin-left: 1rem;
+}
+
+
+i {
+    color: rgb(34, 121, 148);
+    margin: 1rem 1rem 0 1rem;
+}
+
+.skill-bar > * {
+    margin: 1rem 1rem 0 1rem;
+    color: #585858;
+}
+
+.languages>.skill-bar>.bar {
+    padding-bottom: 16px;
+}
+
+.skill-bar > .bar {
+    width: 90%;
+    background: rgb(240, 237, 237);
+    border-radius: 50px;
+}
+
+.html, .css, .javascript {
+    background: rgb(34, 121, 148);
+    height: 1rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    border-radius: 50px;
+}
+
+.tamil, .english, .telugu {
+    background: rgb(34, 121, 148);
+    height: 1.5rem;
+    border-radius: 50px;
+}
+
+.html, .css {
+    width: 50%;
+    
+}
+
+.javascript  {
+    width: 70%;
+}
+
+.english{
+    width: 75%;
+}
+
+.tamil {
+    width: 90%;
+}
+
+.telugu {
+    width: 65%;
+}
+
+
+.experience *{
+    margin: 1rem 1.2rem 0 1.2rem;
+}
+
+.due {
+    color: rgb(34, 121, 148);
+    margin-left: 0;
+    line-height: 2rem;
+}
+
+#experience h1, #education h1 {
+    margin: 1.5rem 1rem 0.5rem 1rem;
+    font-size: 2rem;
+    color: #929292;
+}
+
+.experience > * {
+    margin-top: 1.5rem;
+}
+
+.exp3 {
+    margin-bottom: 2rem;
+}
+footer{
+    height: 20vh;
+    min-height: 150px;
+    width: 100%;
+    background-color: rgb(34,121,148);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social-media{
+    display: flex;
+    
+}
+
+.label {
+    color: rgb(243, 243, 243);
+    margin-bottom: 1rem;
+}
+
+.social-media div i {
+    color:rgb(243, 243, 243);
+    font-size: 1.5rem;
+    margin: 8px;
+}
+
+button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    color: rgb(34, 121, 148);
+    background: rgb(243, 243, 243);
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateX(4px) translateY(4px);
+}
+
+a {
+    text-decoration: none;
+    color: #585858;
+}
+
+.social-media div {
+    cursor: pointer;
+}
+
+h1,h2,h3,h4,h5,h6,p,div {
+    cursor: alias;
+}
+
+.pop-up-wrapper {
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    cursor: pointer;
+}
+
+.pop-up-wrapper > *{
+    z-index: 9999;
+}
+
+.pop-up {
+    width: 80%;
+    height: 50px;
+    background-color: rgb(34, 121, 148);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.pop-up h4 {
+    color: #fff;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 600px) {
+    #wrapper {
+        display: grid;
+        grid-template-areas:
+        'profile experience'
+        'profile education';
+        grid-template-columns: 40% 60%;
+    }
+    
+    #profile {
+        grid-area: profile;
+        margin-right: 0;
+        margin-left: 1rem;
+        height: 80%;
+    }
+    
+    #experience {
+        grid-area: experience;
+    }
+
+    #education {
+        grid-area: education;
+    }
+
+    .pop-up h4 {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .pop-up h4 {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #wrapper {
+        grid-template-columns: 30% 70%;
+    }
+
+    .pop-up h4 {
+        font-size: 1.5rem;
+    }
+}
